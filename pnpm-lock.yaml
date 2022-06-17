@@ -1,0 +1,21 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@types/tampermonkey': ^4.0.5
+  typescript: ^4.7.3
+
+devDependencies:
+  '@types/tampermonkey': 4.0.5
+  typescript: 4.7.3
+
+packages:
+
+  /@types/tampermonkey/4.0.5:
+    resolution: {integrity: sha512-FGPo7d+qZkDF7vyrwY1WNhcUnfDyVpt2uyL7krAu3WKCUMCfIUzOuvt8aSk8N2axHT8XPr9stAEDGVHLvag6Pw==}
+    dev: true
+
+  /typescript/4.7.3:
+    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
