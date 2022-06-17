@@ -7,6 +7,7 @@
 // @match        https://www.bilibili.com/video/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=typescriptlang.org
 // @updateURL    https://cdn.jsdelivr.net/gh/zhouhaixian/bilibili-quick-collect/dist/index.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/zhouhaixian/bilibili-quick-collect/dist/index.js
 // @grant        none
 // ==/UserScript==
 (function () {
