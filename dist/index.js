@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    http://tampermonkey.net/
-// @version      1.0.9
+// @version      1.1.0
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @match        https://www.bilibili.com/video/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=typescriptlang.org
+// @updateURL    https://cdn.jsdelivr.net/gh/zhouhaixian/bilibili-quick-collect/dist/index.js
 // @grant        none
 // ==/UserScript==
 (function () {
