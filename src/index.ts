@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    http://tampermonkey.net/
-// @version      1.0.7
+// @version      1.0.9
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @match        https://www.bilibili.com/video/*
