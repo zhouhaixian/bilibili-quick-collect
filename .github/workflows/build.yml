@@ -30,7 +30,7 @@ jobs:
     - name: Install pnpm
       run: npm i pnpm@latest -g
 
-    - name: install dependencies
+    - name: Install dependencies
       run: pnpm install
 
     - name: Build

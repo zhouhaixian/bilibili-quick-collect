@@ -1,6 +1,6 @@
 {
   "name": "bilibili-quick-collect",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "哔哩哔哩一键点赞并收藏",
   "main": "index.js",
   "author": "Zhou Haixian",
@@ -8,6 +8,8 @@
   "private": true,
   "devDependencies": {
     "@types/tampermonkey": "^4.0.5",
+    "eslint": "^8.17.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.3"
   },
   "scripts": {
