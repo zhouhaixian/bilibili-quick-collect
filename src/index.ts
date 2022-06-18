@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    https://github.com/zhouhaixian/bilibili-quick-collect
-// @version      1.4.4
+// @version      1.4.5
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @license      GPL-3.0
@@ -110,8 +110,9 @@ function collect() {
   }
 }
 
-function waitForSelector(selector: string, isExist = true) {
-  return new Promise<HTMLElement>((resolve) => {
+function waitForSelector(selector: string, isExist = true, timeout = 30000) {
+  return new Promise<HTMLElement>((resolve, reject) => {
+    setTimeout(reject, timeout, "Timeout")
     const interval = setInterval(() => {
       const element = document.querySelector(selector);
 
@@ -127,8 +128,9 @@ function waitForSelector(selector: string, isExist = true) {
   });
 }
 
-function waitForAvailable(selector: string) {
-  return new Promise<HTMLButtonElement>((resolve) => {
+function waitForAvailable(selector: string, timeout = 30000) {
+  return new Promise<HTMLButtonElement>((resolve, reject) => {
+    setTimeout(reject, timeout, "Timeout")
     const interval = setInterval(() => {
       const element = document.querySelector(selector) as HTMLButtonElement;
       if (element.disabled === false) {
