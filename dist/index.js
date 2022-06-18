@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    http://tampermonkey.net/
-// @version      1.3.2
+// @version      1.4.0
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @license      GPL-3.0
@@ -32,7 +32,10 @@ function addQuickCollectButton() {
         function handleClick() {
             like();
             collect();
-            synchronizeState();
+        }
+        function handleRightClick(e) {
+            collect();
+            e.preventDefault();
         }
         var collectIcon = document
             .querySelector("#arc_toolbar_report > div.toolbar-left > span.collect > svg")
@@ -40,10 +43,11 @@ function addQuickCollectButton() {
         var quickCollect = document.createElement("span");
         quickCollect.style.width = "13rem";
         quickCollect.className = "collect";
-        quickCollect.title = title;
+        quickCollect.title = "单击左键收藏并点赞，单击右键仅收藏";
         quickCollect.appendChild(collectIcon);
         quickCollect.innerHTML += "\n      <span class=\"info-text\">".concat(title, "</span>\n    ");
         quickCollect.addEventListener("click", handleClick);
+        quickCollect.addEventListener("contextmenu", handleRightClick);
         setInterval(synchronizeState, 200);
         return quickCollect;
     }
@@ -80,10 +84,7 @@ function waitForSelector(selector, isExist) {
         var interval = setInterval(function () {
             var element = document.querySelector(selector);
             function detectExist() {
-                if (element !== null)
-                    return true;
-                else
-                    return false;
+                return element !== null;
             }
             if (detectExist() === isExist) {
                 clearInterval(interval);
