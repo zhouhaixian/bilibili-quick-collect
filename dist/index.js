@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    https://github.com/zhouhaixian/bilibili-quick-collect
-// @version      1.4.3
+// @version      1.4.4
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @license      GPL-3.0
@@ -55,12 +55,10 @@ function addQuickCollectButton() {
     var toolbar = document.querySelector("#arc_toolbar_report > div.toolbar-left");
     toolbar.appendChild(createQuickCollectButton("单击左键收藏并点赞，单击右键仅收藏", "一键收藏并点赞"));
     function createQuickCollectButton(title, innerText) {
-        var collectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span.collect");
-        var quickCollectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span[title=".concat(title, "]"));
         function synchronizeState() {
             return __awaiter(this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    quickCollectButton.className = collectButton.className;
+                    quickCollect.className = collectButton.className;
                     return [2 /*return*/];
                 });
             });
@@ -73,6 +71,7 @@ function addQuickCollectButton() {
             collect();
             e.preventDefault();
         }
+        var collectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span.collect");
         var collectIcon = document
             .querySelector("#arc_toolbar_report > div.toolbar-left > span.collect > svg")
             .cloneNode(true);
