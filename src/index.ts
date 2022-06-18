@@ -1,9 +1,8 @@
 // ==UserScript==
 // @name         Bilibili quick collect
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/zhouhaixian/bilibili-quick-collect
 // @version      1.4.3
 // @description  哔哩哔哩一键点赞并收藏
-// @Home
 // @author       Zhou Haixian
 // @license      GPL-3.0
 // @match        https://www.bilibili.com/video/*
