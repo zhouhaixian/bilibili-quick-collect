@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    http://tampermonkey.net/
-// @version      1.4.1
+// @version      1.4.2
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @license      GPL-3.0
@@ -53,8 +53,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 })();
 function addQuickCollectButton() {
     var toolbar = document.querySelector("#arc_toolbar_report > div.toolbar-left");
-    toolbar.appendChild(createQuickCollectButton("一键收藏并点赞"));
-    function createQuickCollectButton(title) {
+    toolbar.appendChild(createQuickCollectButton("单击左键收藏并点赞，单击右键仅收藏", "一键收藏并点赞"));
+    function createQuickCollectButton(title, innerText) {
         function synchronizeState() {
             return __awaiter(this, void 0, void 0, function () {
                 var collectButton, quickCollectButton;
@@ -80,9 +80,9 @@ function addQuickCollectButton() {
         var quickCollect = document.createElement("span");
         quickCollect.style.width = "13rem";
         quickCollect.className = "collect";
-        quickCollect.title = "单击左键收藏并点赞，单击右键仅收藏";
+        quickCollect.title = title;
         quickCollect.appendChild(collectIcon);
-        quickCollect.innerHTML += "\n      <span class=\"info-text\">".concat(title, "</span>\n    ");
+        quickCollect.innerHTML += "\n      <span class=\"info-text\">".concat(innerText, "</span>\n    ");
         quickCollect.addEventListener("click", handleClick);
         quickCollect.addEventListener("contextmenu", handleRightClick);
         setInterval(synchronizeState, 200);
