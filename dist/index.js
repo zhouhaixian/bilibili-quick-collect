@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    https://github.com/zhouhaixian/bilibili-quick-collect
-// @version      1.4.4
+// @version      1.4.5
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @license      GPL-3.0
@@ -72,9 +72,11 @@ function collect() {
         return { hiddenDialog: hiddenDialog, unHideDialog: unHideDialog };
     }
 }
-function waitForSelector(selector, isExist) {
+function waitForSelector(selector, isExist, timeout) {
     if (isExist === void 0) { isExist = true; }
-    return new Promise(function (resolve) {
+    if (timeout === void 0) { timeout = 30000; }
+    return new Promise(function (resolve, reject) {
+        setTimeout(reject, timeout, "Timeout");
         var interval = setInterval(function () {
             var element = document.querySelector(selector);
             function detectExist() {
@@ -87,8 +89,10 @@ function waitForSelector(selector, isExist) {
         }, 200);
     });
 }
-function waitForAvailable(selector) {
-    return new Promise(function (resolve) {
+function waitForAvailable(selector, timeout) {
+    if (timeout === void 0) { timeout = 30000; }
+    return new Promise(function (resolve, reject) {
+        setTimeout(reject, timeout, "Timeout");
         var interval = setInterval(function () {
             var element = document.querySelector(selector);
             if (element.disabled === false) {
