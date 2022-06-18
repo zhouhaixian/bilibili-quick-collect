@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    http://tampermonkey.net/
-// @version      1.4.2
+// @version      1.4.3
 // @description  哔哩哔哩一键点赞并收藏
+// @Home
 // @author       Zhou Haixian
 // @license      GPL-3.0
 // @match        https://www.bilibili.com/video/*
@@ -55,12 +56,11 @@ function addQuickCollectButton() {
     var toolbar = document.querySelector("#arc_toolbar_report > div.toolbar-left");
     toolbar.appendChild(createQuickCollectButton("单击左键收藏并点赞，单击右键仅收藏", "一键收藏并点赞"));
     function createQuickCollectButton(title, innerText) {
+        var collectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span.collect");
+        var quickCollectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span[title=".concat(title, "]"));
         function synchronizeState() {
             return __awaiter(this, void 0, void 0, function () {
-                var collectButton, quickCollectButton;
                 return __generator(this, function (_a) {
-                    collectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span.collect");
-                    quickCollectButton = document.querySelector("#arc_toolbar_report > div.toolbar-left > span[title=".concat(title, "]"));
                     quickCollectButton.className = collectButton.className;
                     return [2 /*return*/];
                 });
