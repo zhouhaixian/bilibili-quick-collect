@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bilibili quick collect
 // @namespace    https://github.com/zhouhaixian/bilibili-quick-collect
-// @version      1.4.3
+// @version      1.4.4
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
 // @license      GPL-3.0
@@ -30,15 +30,8 @@ function addQuickCollectButton() {
   );
 
   function createQuickCollectButton(title: string, innerText: string) {
-    const collectButton = document.querySelector(
-      `#arc_toolbar_report > div.toolbar-left > span.collect`
-    );
-    const quickCollectButton = document.querySelector(
-      `#arc_toolbar_report > div.toolbar-left > span[title=${title}]`
-    );
-
     async function synchronizeState() {
-      quickCollectButton.className = collectButton.className;
+      quickCollect.className = collectButton.className;
     }
 
     function handleClick() {
@@ -51,6 +44,9 @@ function addQuickCollectButton() {
       e.preventDefault();
     }
 
+    const collectButton = document.querySelector(
+      `#arc_toolbar_report > div.toolbar-left > span.collect`
+    );
     const collectIcon = document
       .querySelector(
         "#arc_toolbar_report > div.toolbar-left > span.collect > svg"
@@ -110,7 +106,7 @@ function collect() {
       document.body.removeChild(styleElement);
     }
 
-    return { hiddenDialog, unHideDialog };
+    return {hiddenDialog, unHideDialog};
   }
 }
 

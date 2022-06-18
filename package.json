@@ -1,6 +1,6 @@
 {
   "name": "bilibili-quick-collect",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "哔哩哔哩一键点赞并收藏",
   "main": "index.js",
   "author": "Zhou Haixian",
