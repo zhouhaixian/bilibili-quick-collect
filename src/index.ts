@@ -4,6 +4,7 @@
 // @version      1.3.2
 // @description  哔哩哔哩一键点赞并收藏
 // @author       Zhou Haixian
+// @license      GPL-3.0
 // @match        https://www.bilibili.com/video/*
 // @icon         https://www.bilibili.com/favicon.ico
 // @updateURL    https://raw.githubusercontent.com/zhouhaixian/bilibili-quick-collect/main/dist/index.js
