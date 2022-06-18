@@ -30,7 +30,7 @@ function addQuickCollectButton() {
   );
 
   function createQuickCollectButton(title: string, innerText: string) {
-    async function synchronizeState() {
+    function synchronizeState() {
       quickCollect.className = collectButton.className;
     }
 
